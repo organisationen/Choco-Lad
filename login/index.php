@@ -1,25 +1,18 @@
 <?php
-header("Expires: Mon, 26 Jul 1997 05:00:00 GMT");
-header("Cache-Control: no-cache");
-header("Pragma: no-cache");
-
-session_start();
+require($_SERVER['DOCUMENT_ROOT'] . '/resources/config.php');
 
 $title = 'Logga in';
+$current_navbar_tab = "";
 
-require($_SERVER['DOCUMENT_ROOT'] . '/resources/templates/start.php');
-require($_SERVER['DOCUMENT_ROOT'] . '/resources/templates/head.php');
-require($_SERVER['DOCUMENT_ROOT'] . '/resources/templates/header.php');
-include($_SERVER['DOCUMENT_ROOT'] . '/resources/templates/main_start.php');
+require($root . '/resources/templates/above.php');
 //efter detta kommer innehållet i dokumentet (main).
 ?>
 
 <div class="col-lg-6">
 
 <?php
-$connection = mysqli_connect('localhost', 'root', '', 'loginapp');
 
-	include($_SERVER['DOCUMENT_ROOT'] . '/resources/database/db.php');
+	include($_SERVER['DOCUMENT_ROOT'] . '/resources/scripts/db.php');
     
     if (isset($_POST['submit'])) {
         
@@ -56,8 +49,6 @@ $connection = mysqli_connect('localhost', 'root', '', 'loginapp');
 
 <br/>
 <?php
-include($_SERVER['DOCUMENT_ROOT'] . '/resources/templates/end.php');
-require($_SERVER['DOCUMENT_ROOT'] . '/resources/templates/footer.php');
-require($_SERVER['DOCUMENT_ROOT'] . '/resources/templates/end.php');
+require($root . '/resources/templates/below.php');
 //made by Jonatan Nogrell, I guess;
 ?>
