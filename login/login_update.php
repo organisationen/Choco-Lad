@@ -16,7 +16,7 @@ if(isset($_POST['submit'])) {
     $username = htmlspecialchars($_POST['username']);
     $password = htmlspecialchars($_POST['password']);
     
-    $query = "UPDATEusers SET ";
+    $query = "UPDATE users SET ";
     $query .= "username = '$username', ";
     $query .= "password = '$password' ";
     $query .= "WHERE id = $id ";
