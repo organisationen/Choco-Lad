@@ -14,12 +14,12 @@ require($root . '/resources/templates/above.php');
     
     if(isset($_POST['submit'])) {
     
-        $username = htmlspecialchars($_POST['username']);
-        $email = htmlspecialchars($_POST['email']);
-        $password = htmlspecialchars($_POST['password']);
+        $username = mysql_real_escape_string($_POST['username']);
+        $email = mysql_real_escape_string($_POST['email']);
+        $hashed_password = mysql_real_escape_string(hash('sha512', $_POST['password']));
         
         $query = "INSERT INTO USERS(username,email,password)";
-        $query .= "VALUES ('$username', '$email', '$password')";
+        $query .= "VALUES ('$username', '$email', '$hashed_password')";
         
         $result = mysqli_query($connection, $query);
     

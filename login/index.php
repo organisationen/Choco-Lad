@@ -27,6 +27,11 @@ require($root . '/resources/templates/above.php');
         }
         
     }
+    
+    if (isset($_POST['register'])) {
+        
+        header("location: $root . '/login/login_create.php'");
+    }
 ?>
 
 	<form action="login.php" method="post">
@@ -42,7 +47,7 @@ require($root . '/resources/templates/above.php');
         </div>
         
         <input class="btn btn-primary" type="submit" name="submit" value="Logga in">
-        <input class="btn btn-warning" type="submit" name="register" value="Registrera dig">
+        <input class="btn btn-warning" type="button" name="register" value="Registrera dig">
         
     </form>    
 </div>

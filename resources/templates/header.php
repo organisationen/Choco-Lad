@@ -6,7 +6,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>                        
       </button>
-      <a class="navbar-brand" href="#"><img class="img-responsive d-block" onerror="this.style.display='none' src="<?php echo $root . '/resources/multimedia/images/logo.png' ?>" alt="Choco LAD"></a>
+      <a class="navbar-brand" href="#"><img class="img-responsive d-block" onerror="this.style.display='none' src="<?= $root . '/resources/multimedia/images/logo.png';?>" alt="Choco LAD"></a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
