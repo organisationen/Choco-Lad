@@ -20,8 +20,7 @@ require($root . '/resources/templates/above.php');
        $password = $_POST['password'];
         
         if($username && $password) {
-            echo $username;
-            echo $password;
+            ;
         } else {
             echo '<p class="bg-danger text-danger">Var god fyll i båda fälten</p>';
         }
@@ -30,11 +29,12 @@ require($root . '/resources/templates/above.php');
     
     if (isset($_POST['register'])) {
         
-        header("location: $root . '/login/login_create.php'");
+        header("location: $root . '/login_create.php'");
     }
 ?>
 
 	<div class="container-fluid">
+        <br/>
         <form action="login.php" method="post">
 
             <div class="form-group">
@@ -48,10 +48,12 @@ require($root . '/resources/templates/above.php');
             </div>
 
             <input class="btn btn-primary" type="submit" name="submit" value="Logga in">
-            <input class="btn btn-warning" type="button" name="register" value="Registrera dig">
+            <a href="login_create.php"><input class="btn btn-warning" type="button" name="register" value="Registrera dig"></a>
 
         </form>
-    </div>    
+    </div>
+    <br/>
+    <img class="img-responsive" src="http://via.placeholder.com/960x150"/>
 </div>
 
 <br/>
