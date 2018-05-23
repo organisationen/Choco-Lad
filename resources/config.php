@@ -5,6 +5,10 @@ header("Pragma: no-cache");
 
 session_start();
 
+if(!isset($_SESSION['loggedIn'])){
+	$_SESSION['loggedIn'] = false;
+}
+
 $root = $_SERVER['DOCUMENT_ROOT'];
 
 ?>

@@ -1,7 +1,7 @@
 <footer class="container-fluid text-center">
-  <p>Online Store Copyright</p>  
-  <form class="form-inline">Get deals:
-    <input type="email" class="form-control" size="50" placeholder="Email Address">
-    <button type="button" class="btn btn-danger">Sign Up</button>
+  <p>Choco-Lad AB</p>  
+  <form class="form-inline">Bättre sida än denna:
+    <input type="url" class="form-control" size="50" placeholder="Webbadress">
+    <button type="button" class="btn btn-success">Skicka mig hit istället!</button>
   </form>
 </footer>

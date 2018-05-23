@@ -1,1 +1,1 @@
-<div class="container" id="main">
+<div class="container" role="main" id="main">
