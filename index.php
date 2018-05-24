@@ -1,6 +1,8 @@
 <?php
 require($_SERVER['DOCUMENT_ROOT'] . '/resources/config.php');
 
+$_SESSION['NavId'] = 1;
+
 $title = 'Välkommen till Choco Lad!';
 //Variabeln "$title" = innehållet i <title> 
 

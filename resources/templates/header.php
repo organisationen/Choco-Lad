@@ -10,20 +10,23 @@
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-        <li><a href="#">Produkter</a></li>
-        <li><a href="#">Deals</a></li>
-        <li><a href="#">Om oss</a></li>
-        <li><a href="#">Kontakt</a></li>
+        <li <?php if($_SESSION['NavId'] == 2){echo 'class="active"';}?>><a href="#" >Produkter</a></li>
+        <li <?php if($_SESSION['NavId'] == 3){echo 'class="active"';}?>><a href="#">Deals</a></li>
+        <li <?php if($_SESSION['NavId'] == 4){echo 'class="active"';}?>><a href="#">Om oss</a></li>
+        <li <?php if($_SESSION['NavId'] == 5){echo 'class="active"';}?>><a href="#">Kontakt</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#"><span class="glyphicon glyphicon-user"></span> 
-			<?php if (isset($_SESSION['username'])) {
+        <li <?php if($_SESSION['NavId'] == 6){echo 'class="active"';}?>><a href="#"><span class="glyphicon glyphicon-user"></span> 
+			<?php if (isset($_SESSION['LoggedIn'])) {
 				echo $_SESSION['username'];
 				}
 				else {
 					echo 'logga in';
 				}
-				?></a></li>
+				?>
+            
+            </a></li>
+
         <li><a href="#"><span class="glyphicon glyphicon-shopping-cart"></span> Cart</a></li>
       </ul>
     </div>

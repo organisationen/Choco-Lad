@@ -3,6 +3,8 @@ require($_SERVER['DOCUMENT_ROOT'] . '/resources/config.php');
 
 $title = 'Registrera dig';
 
+$_SESSION['NavId'] = 6;
+
 require($root . '/resources/templates/above.php');
 //efter detta kommer innehållet i dokumentet (main).
 ?>

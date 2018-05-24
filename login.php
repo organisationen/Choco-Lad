@@ -2,17 +2,22 @@
 require($_SERVER['DOCUMENT_ROOT'] . '/resources/config.php');
 
 $title = 'Logga in';
-$current_navbar_tab = "";
+
+$_SESSION['NavId'] = 6;
 
 require($root . '/resources/templates/above.php');
 //efter detta kommer innehållet i dokumentet (main).
 ?>
 
 <div class="col-lg-6">
-
+	<div class="container-fluid">
+        <br/>
+        
 <?php
 
 	include($_SERVER['DOCUMENT_ROOT'] . '/resources/scripts/db.php');
+    
+    $result = mysqli_query($connection, $query);
     
     if (isset($_POST['submit'])) {
         
@@ -20,7 +25,7 @@ require($root . '/resources/templates/above.php');
        $password = $_POST['password'];
         
         if($username && $password) {
-            ;
+            $query = "SELECT * FROM USERS WHERE ";
         } else {
             echo '<p class="bg-danger text-danger">Var god fyll i båda fälten</p>';
         }
@@ -29,12 +34,10 @@ require($root . '/resources/templates/above.php');
     
     if (isset($_POST['register'])) {
         
-        header("location: $root . '/login_create.php'");
+       // header("location: $root . '/login_create.php'");
     }
 ?>
-
-	<div class="container-fluid">
-        <br/>
+        
         <form action="login.php" method="post">
 
             <div class="form-group">

@@ -1,3 +1,28 @@
+
+<?php
+    include($_SERVER['DOCUMENT_ROOT'] . '/resources/scripts/db.php');
+    
+$_SESSION['NavId'] = 6;
+
+    if(isset($_POST['submit'])) {
+    
+        $username = mysqli_real_escape_string($connection, $_POST['username']);
+        $email = mysqli_real_escape_string($connection, $_POST['email']);
+        $hashed_password = mysqli_real_escape_string($connection, hash('sha512', $_POST['password']));
+        
+        $query = "INSERT INTO USERS(username,email,password)";
+        $query .= "VALUES ('$username', '$email', '$hashed_password')";
+        
+        $result = mysqli_query($connection, $query);
+    
+    if(!$result) {
+        die('Något gick fel' . mysqli_error());
+    } else {
+        header("location: login.php");
+    }
+    }
+?>
+
 <?php
 require($_SERVER['DOCUMENT_ROOT'] . '/resources/config.php');
 
@@ -8,28 +33,6 @@ require($root . '/resources/templates/above.php');
 ?>
 
 <div class="col-lg-6">
-
-<?php
-    include($_SERVER['DOCUMENT_ROOT'] . '/resources/scripts/db.php');
-    
-    if(isset($_POST['submit'])) {
-    
-        $username = mysql_real_escape_string($_POST['username']);
-        $email = mysql_real_escape_string($_POST['email']);
-        $hashed_password = mysql_real_escape_string(hash('sha512', $_POST['password']));
-        
-        $query = "INSERT INTO USERS(username,email,password)";
-        $query .= "VALUES ('$username', '$email', '$hashed_password')";
-        
-        $result = mysqli_query($connection, $query);
-    
-    if(!$result) {
-        die('Något gick fel' . mysqli_error());
-    } else {
-        echo "<p class='bg-success text-success'>Ditt konto har registrerats!</p>";
-    }
-    }
-?>
 
 	<form action="login_create.php" method="post">
         
