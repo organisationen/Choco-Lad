@@ -15,27 +15,37 @@ require($root . '/resources/templates/above.php');
         
 <?php
 
-	include($_SERVER['DOCUMENT_ROOT'] . '/resources/scripts/db.php');
+        include($_SERVER['DOCUMENT_ROOT'] . '/resources/scripts/db.php');
     
-    $result = mysqli_query($connection, $query);
-    
-    if (isset($_POST['submit'])) {
-        
-       $username = $_POST['username'];
-       $password = $_POST['password'];
-        
-        if($username && $password) {
-            $query = "SELECT * FROM USERS WHERE ";
-        } else {
-            echo '<p class="bg-danger text-danger">Var god fyll i båda fälten</p>';
+        if (isset($_POST['submit'])) {
+            
+            if (isset($_POST['username']) || isset($_POST['password'])) {
+                
+                $username = $_POST['username'];
+                $password = $_POST['password'];
+                
+               
+                
+                if($username && $password) {
+                    $query = "SELECT * FROM users WHERE Username = '$username' AND Password = '$password'";
+                    $result = mysqli_query($connection, $query);
+                    
+                    if (mysqli_fetch_array($result)){
+                        $_SESSION['loggedIn'] = true;
+                        $_SESSION['username'] = $username;
+                        echo $_SESSION['loggedIn'];
+                    }
+                } else {
+                        echo '<p class="bg-danger text-danger">Var god fyll i båda fälten</p>';
+                    }
+                
+            }
         }
-        
-    }
     
-    if (isset($_POST['register'])) {
+        if (isset($_POST['register'])) {
         
        // header("location: $root . '/login_create.php'");
-    }
+        }
 ?>
         
         <form action="login.php" method="post">
