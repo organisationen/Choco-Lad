@@ -16,7 +16,7 @@
         <li <?php if($_SESSION['NavId'] == 5){echo 'class="active"';}?>><a href="#">Kontakt</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li <?php if($_SESSION['NavId'] == 6){echo 'class="active"';}?>><a href="#"><span class="glyphicon glyphicon-user"></span> 
+        <li <?php if($_SESSION['NavId'] == 6){echo 'class="active"';}?>><a href="<?= $root .'/account.php';?>"><span class="glyphicon glyphicon-user"></span> 
 			<?php if (isset($_SESSION['LoggedIn'])) {
 				echo $_SESSION['username'];
 				}

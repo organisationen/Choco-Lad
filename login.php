@@ -22,18 +22,18 @@ require($root . '/resources/templates/above.php');
             if (isset($_POST['username']) || isset($_POST['password'])) {
                 
                 $username = $_POST['username'];
-                $password = $_POST['password'];
+                $hashed_password = mysqli_real_escape_string($connection, hash('sha512', $_POST['password']));
                 
                
                 
-                if($username && $password) {
-                    $query = "SELECT * FROM users WHERE Username = '$username' AND Password = '$password'";
+                if($username && $hashed_password) {
+                    $query = "SELECT * FROM users WHERE Username = '$username' AND Password = '$hashed_password'";
                     $result = mysqli_query($connection, $query);
                     
                     if (mysqli_fetch_array($result)){
                         $_SESSION['loggedIn'] = true;
                         $_SESSION['username'] = $username;
-                        echo $_SESSION['loggedIn'];
+                        echo $_SESSION['username'];
                     }
                 } else {
                         echo '<p class="bg-danger text-danger">Var god fyll i båda fälten</p>';
