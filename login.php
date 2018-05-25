@@ -5,6 +5,15 @@ $title = 'Logga in';
 
 $_SESSION['NavId'] = 6;
 
+        include($_SERVER['DOCUMENT_ROOT'] . '/resources/scripts/db.php');
+    
+        require($root . '/resources/scripts/login-script.php');
+
+        if (isset($_POST['register'])) {
+        
+       // header("location: $root . '/login_create.php'");
+        }
+
 require($root . '/resources/templates/above.php');
 //efter detta kommer innehållet i dokumentet (main).
 ?>
@@ -13,40 +22,12 @@ require($root . '/resources/templates/above.php');
 	<div class="container-fluid">
         <br/>
         
-<?php
-
-        include($_SERVER['DOCUMENT_ROOT'] . '/resources/scripts/db.php');
-    
-        if (isset($_POST['submit'])) {
-            
-            if (isset($_POST['username']) || isset($_POST['password'])) {
-                
-                $username = $_POST['username'];
-                $hashed_password = mysqli_real_escape_string($connection, hash('sha512', $_POST['password']));
-                
-               
-                
-                if($username && $hashed_password) {
-                    $query = "SELECT * FROM users WHERE Username = '$username' AND Password = '$hashed_password'";
-                    $result = mysqli_query($connection, $query);
-                    
-                    if (mysqli_fetch_array($result)){
-                        $_SESSION['loggedIn'] = true;
-                        $_SESSION['username'] = $username;
-                        echo $_SESSION['username'];
-                    }
-                } else {
-                        echo '<p class="bg-danger text-danger">Var god fyll i båda fälten</p>';
-                    }
-                
-            }
-        }
-    
-        if (isset($_POST['register'])) {
+        <?php if (isset($error)) {
+            echo $error;
+        } 
         
-       // header("location: $root . '/login_create.php'");
-        }
-?>
+        ?>
+        
         
         <form action="login.php" method="post">
 

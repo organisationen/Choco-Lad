@@ -11,7 +11,7 @@ require($root . '/resources/templates/above.php');
 //efter detta kommer innehållet i dokumentet (main).
 ?>
 
-skriv här
+<?php include($root . '/resources/scripts/products-script.php')?>
 
 <?php
 require($root . '/resources/templates/below.php');
