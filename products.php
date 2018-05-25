@@ -1,7 +1,7 @@
 <?php
 require($_SERVER['DOCUMENT_ROOT'] . '/resources/config.php');
 
-$_SESSION['NavId'] = 'integer';
+$_SESSION['NavId'] = 2;
 //Vilken flik i headern är aktiv?
 
 $title = 'okonfigurerad titel';
