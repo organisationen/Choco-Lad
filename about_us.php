@@ -14,7 +14,7 @@ require($root . '/resources/templates/above.php');
         <div class="container-fluid jumbotron">
             <div class="container-fluid text-center">
                 <p>Det är vi som är..</p>
-                <img height="100%" class="img d-block" onerror="this.style.display='none'" src="<?= $HostAddress .'/resources/multimedia/images/logo.png'?>" alt="Choco LAD">
+                <img height="100%" class="img-responsive d-block" onerror="this.style.display='none'" src="<?= $HostAddress .'/resources/multimedia/images/logo.png'?>" alt="Choco LAD">
                 <h1>Chokladmakare</h1>
             </div>       
         </div>

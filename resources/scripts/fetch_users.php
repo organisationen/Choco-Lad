@@ -14,7 +14,8 @@ function showALLData() {
     }
 
     while($row = mysqli_fetch_assoc($result)) {
-        $id = $row['id'];
+        $id = $row['cust_id'];
+        $usrnam = $row['username'];
 
         echo "<option value='$id'>$id</option>";
     }

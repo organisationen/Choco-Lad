@@ -26,6 +26,7 @@ if(isset($_GET['submit'])) {
 
 ?>
 <h1 class="text-primary">Mata in data i databasen <span class="text-danger">products</span></h1>
+<div class="container">
 <form action="add-products.php" method="get">
             <label class="text-primary" for="prod_name">Namn på produkten</label>
             <input type="text" name="prod_name" class="form-control">
@@ -38,7 +39,8 @@ if(isset($_GET['submit'])) {
             <br/>
             <input class="btn btn-danger" type="submit" name="submit" value='Mata in i "products"'>
         </form>
-        <br/>
+</div>
+<br/>
 <?php
 require($root . '/resources/templates/main_end.php');
 require($root . '/resources/templates/end.php');
