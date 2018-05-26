@@ -1,9 +1,11 @@
 <?php
-header("Expires: Mon, 26 Jul 1997 05:00:00 GMT");
-header("Cache-Control: no-cache");
-header("Pragma: no-cache");
 
 session_start();
+
+if(!isset($_SESSION['loggedIn'])){
+	$_SESSION['loggedIn'] = false;
+	header("Location:index.php");
+}
 
 if (isset($_session['LogOff'])) {
     
@@ -13,8 +15,8 @@ if (isset($_session['LogOff'])) {
     }
 }
 
-if(isset($_SESSION['loggedIn'])){
-     $username = $_SESSION['username'];
+if(isset($_SESSION['username'])){
+    $_SESSION['username'] = $username;
 }
 
 $root = $_SERVER['DOCUMENT_ROOT'];

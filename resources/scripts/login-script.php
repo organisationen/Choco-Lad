@@ -17,7 +17,8 @@
                         $_SESSION['username'] = $username;
                         echo $username;
                 } else {
-                        //Kunde inte hitta en användare i databasen med den kombinationen av användarnamn och lösenord        
+                    echo "Fack Juu!";    
+                    //Kunde inte hitta en användare i databasen med den kombinationen av användarnamn och lösenord        
                 }                
             } else {
                 $error = '<p class="bg-danger text-danger">Var god fyll i båda fälten</p>';

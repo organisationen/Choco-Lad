@@ -10,7 +10,7 @@ $_SESSION['NavId'] = 6;
         $email = mysqli_real_escape_string($connection, $_POST['email']);
         $hashed_password = mysqli_real_escape_string($connection, hash('sha512', $_POST['password']));
         
-        $query = "INSERT INTO USERS(username,email,password)";
+        $query = "INSERT INTO users(username,email,password)";
         $query .= "VALUES ('$username', '$email', '$hashed_password')";
         
         $result = mysqli_query($connection, $query);
@@ -19,6 +19,7 @@ $_SESSION['NavId'] = 6;
         die('Något gick fel' . mysqli_error());
     } else {
         header("location: login.php");
+        $_SESSION['LoggedIn'] = true;
     }
     }
 ?>
@@ -36,29 +37,29 @@ require($root . '/resources/templates/above.php');
 
 	<form action="login_create.php" method="post">
         
-        <div class="form-group">
-            <label for="username">Användarnamn</label>
-            <input type="text" name="username" class="form-control">
-        </div> 
-        
-        <div class="form-group">
-            <label for="email">E-mail</label>
-            <input type="email" name="email" class="form-control">
-        </div>
-        
-        <div class="form-group">
-            <label for="password">Lösenord</label>
-            <input type="password" name="password" class="form-control">
-        </div>
-        
-        <div class="form-group">
-            <label for="password">Återbekräfta Lösenord</label>
-            <input type="password" name="password_confirm" class="form-control">
-        </div>
-        
-        <input class="btn btn-primary" type="submit" name="submit" value="Skapa konto">
-        
-    </form>    
+            <div class="form-group">
+                <label for="username">Användarnamn</label>
+                <input type="text" name="username" class="form-control">
+            </div> 
+
+            <div class="form-group">
+                <label for="email">E-mail</label>
+                <input type="email" name="email" class="form-control">
+            </div>
+
+            <div class="form-group">
+                <label for="password">Lösenord</label>
+                <input type="password" name="password" class="form-control">
+            </div>
+
+            <div class="form-group">
+                <label for="password">Återbekräfta Lösenord</label>
+                <input type="password" name="password_confirm" class="form-control">
+            </div>
+
+            <input class="btn btn-primary" type="submit" name="submit" value="Skapa konto">
+
+        </form>    
 </div>
 
 <br/>

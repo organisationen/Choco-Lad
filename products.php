@@ -4,7 +4,7 @@ require($_SERVER['DOCUMENT_ROOT'] . '/resources/config.php');
 $_SESSION['NavId'] = 2;
 //Vilken flik i headern är aktiv?
 
-$title = 'okonfigurerad titel';
+$title = 'Våra Produkter';
 //Variabeln "$title" = innehållet i <title> 
 
 require($root . '/resources/templates/above.php');
