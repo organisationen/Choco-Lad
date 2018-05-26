@@ -1,20 +1,21 @@
 <?php
 require($_SERVER['DOCUMENT_ROOT'] . '/resources/config.php');
 
-$_SESSION['NavId'] = 1;
+if ($_SESSION['LoggedIn'] = false) {
+    header("Location:" .$HostAddress .'/login.php');
+}
 
-$title = 'Välkommen till Choco Lad!';
+$_SESSION['NavId'] = 6;
+//Vilken flik i headern är aktiv?
+
+$title = 'okonfigurerad titel';
 //Variabeln "$title" = innehållet i <title> 
 
 require($root . '/resources/templates/above.php');
 //efter detta kommer innehållet i dokumentet (main).
 ?>
 
-heafojp
-
-<?php
-include($_SERVER['DOCUMENT_ROOT'] . '/resources/scripts/new-items-script.php');
-?>
+skriv här
 
 <?php
 require($root . '/resources/templates/below.php');

@@ -2,7 +2,7 @@
         <title><?= $title?></title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="icon" href="http://privat.bahnhof.se/wb361158/burk/choco-lad_deps/favicon.ico" type="icon/x-icon" sizes="100x100">
+        <link rel="icon" href="<?= $HostAddress .'/resources/multimedia/images/favicon.ico'?>" type="icon/x-icon" sizes="100x100">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -29,13 +29,43 @@
 
         /*bakgrundsbild m.m.*/
         body {
-          background-image: url("http://privat.bahnhof.se/wb361158/burk/choco-lad_deps/pattern.png");
-          background-repeat: repeat;
+        background-image: url("<?= $HostAddress .'/resources/multimedia/images/pattern.png'?>");
+        background-repeat: repeat;
         }
         /*Byt färg på förgrunden*/
         #main {
         background-color: darkgray;
         border-radius: 10px;
+        display: flex;
+        align-content: flex-start;
+        flex-wrap: wrap;
+        }
+        .flex-row {
+        display: flex;
+        flex-wrap: wrap;
+        }
+        .flex-row > [class*='col-'] {
+        display: flex;
+        flex-direction: column;
+        flex-basis: 100%;
+        width: 200px;
+        /*justify-content: center;*/
+        }
+
+        .flex-row .thumbnail,
+        .flex-row .caption {
+        flex-direction: column;
+        display: flex;
+        flex: 1 0 auto;
+        height: auto;
+        position: relative;
+        }
+        .flex-text {
+        flex-grow: 1;
+        }
+        .flex-row img {
+        min-width: 0;
+        width: 100%;
         }
         </style>
     </head>

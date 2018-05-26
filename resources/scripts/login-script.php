@@ -12,9 +12,9 @@
                 $query = "SELECT * FROM users WHERE Username = '$username' AND Password = '$hashed_password'";
                 $result = mysqli_query($connection, $query);
                     
-                if(mysqli_num_fields($connection, $result) > 0) {
+                if(mysqli_num_fields($result) > 0) {
                         $_SESSION['loggedIn'] = true;
-                        $_SESSION['username'] = $username;
+                        $username = $_SESSION['username'];
                         echo $username;
                 } else {
                     echo "Fack Juu!";    

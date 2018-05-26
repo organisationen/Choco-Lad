@@ -4,7 +4,6 @@ session_start();
 
 if(!isset($_SESSION['loggedIn'])){
 	$_SESSION['loggedIn'] = false;
-	header("Location:index.php");
 }
 
 if (isset($_session['LogOff'])) {
@@ -16,9 +15,12 @@ if (isset($_session['LogOff'])) {
 }
 
 if(isset($_SESSION['username'])){
-    $_SESSION['username'] = $username;
+    $username = $_SESSION['username'];
 }
 
 $root = $_SERVER['DOCUMENT_ROOT'];
+
+$HostAddress = 'http://localhost';
+//Din publika adress till servern eg. 'https://google.com'
 
 ?>
