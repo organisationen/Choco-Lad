@@ -40,9 +40,14 @@ require($root . '/resources/templates/above.php');
                 <label for="password">Password</label>
                 <input type="password" name="password" class="form-control">
             </div>
-
+            
             <input class="btn btn-primary" type="submit" name="submit" value="Logga in">
             <a href="<?= $HostAddress .'/login_create.php'?>"><input class="btn btn-warning" type="button" name="register" value="Registrera dig"></a>
+            
+            <br/>
+            <br/>
+            
+            <a href="<?= $HostAddress .'/login_update.php'?>"><input class="btn btn-danger" type="button" name="update" value="Glömt ditt lösen?"></a>
 
         </form>
     </div>
