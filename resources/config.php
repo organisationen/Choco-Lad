@@ -2,7 +2,7 @@
 
 session_start();
 
-if(!isset($_SESSION['loggedIn'])){
+if(!isset($_SESSION['LoggedIn'])){
 	$_SESSION['loggedIn'] = false;
 }
 
@@ -20,9 +20,9 @@ if(isset($_SESSION['username'])){
 
 $root = $_SERVER['DOCUMENT_ROOT'];
 
-$HostAddress = 'http://localhost';
+$HostAddress = 'http://' .$_SERVER['HTTP_HOST'];
 //Din publika adress till servern eg. 'https://google.com'
 
-require($root .'/resources/scripts/db.php')
+require($root .'/resources/scripts/db.php');
 
 ?>

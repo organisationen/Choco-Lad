@@ -1,7 +1,7 @@
 <?php
 require($_SERVER['DOCUMENT_ROOT'] . '/resources/config.php');
 
-$_SESSION['NavId'] = '7';
+$_SESSION['NavId'] = 'integer';
 //Vilken flik i headern är aktiv?
 
 $title = 'okonfigurerad titel';
@@ -9,11 +9,18 @@ $title = 'okonfigurerad titel';
 
 require($root . '/resources/templates/above.php');
 //efter detta kommer innehållet i dokumentet (main).
+
+$query = "SELECT * FROM orders";
+$result = mysqli_query($connection, $query);
+
+while($row = mysqli_fetch_assoc($result)) {
+echo "<h2 class='text-danger''>" .implode("|",$row) ."</h2>";
 ?>
 
-<h1 class="text-danger">Denna funktionen är ej konfigurerad än... :(</h1>
+
 
 <?php
+}
 require($root . '/resources/templates/below.php');
 //made by Jonatan Nogrell, I guess
 ?>
