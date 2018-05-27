@@ -17,8 +17,8 @@
                 
                 if($row) {
                         $_SESSION['loggedIn'] = true;
-                        $username = $row['username'];
-                        echo $username;
+                        $_COOKIE['username'] = $row['username']; //Jag vet att cookies är ett dåligt val här, men jag är desperat!
+                        echo '<pre>' .$row['username'] .'</pre>';
                 } else {
                     $error = '<p class="bg-danger text-danger">kunde ej logga in</p>';    
                     //Kunde inte hitta en användare i databasen med den kombinationen av användarnamn och lösenord        
