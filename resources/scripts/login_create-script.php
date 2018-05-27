@@ -13,14 +13,25 @@
         $last_name = mysqli_real_escape_string($connection, $_POST['last_name']);
         
         $query = "INSERT INTO users(username,email,password,birthdate,street,street_nr,zip_code,city,first_name,last_name)";
-        $query .= "VALUES ('$username', '$email', '$hashed_password', '$birthdate', '$street', '$street_nr',' '$zip_code', '$city', '$first_name', '$last_name')";
+        $query .= "VALUES ('$username', '$email', '$hashed_password', '$birthdate', '$street', '$street_nr', '$zip_code', '$city', '$first_name', '$last_name')";
         
         $result = mysqli_query($connection, $query);
     
         if(!$result) {
             die('Något gick fel' . mysqli_error());
         } else {
-            $_SESSION['LoggedIn'] = true;
+            $row = mysqli_fetch_array(mysqli_query($connection, "SELECT * FROM users WHERE username = '$username'"));
+            
+            $ModalToLogin = true;
+            
+            if($row) {
+                        $_SESSION['LoggedIn'] = true;
+                        $username = $row['username'];
+                        $RegSuccess = 'Du är nu registrerad, ';
+            } else {
+                    $error = '<p class="bg-danger text-danger">kunde ej logga in</p>';    
+                    //Kunde inte hitta en användare i databasen med den kombinationen av användarnamn och lösenord        
+            } 
         }
         }
 ?>
