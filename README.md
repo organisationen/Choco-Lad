@@ -30,6 +30,10 @@ Gå in i /resources/config.php och ändra några viktiga parametrar innan du bö
 Du kan importera databasen från '/resources/database/
 ```
 
+### Extra info
+
+- Jag hafäktades en del med att få $_SESSION['LoggedIn']' att finka så jag har den som en cookie istället. Jättedumt, jag vet, men glöm inte att använda inkognitoläge också om du vill se båda versionerna av vissa sidor!! (Ex. /login.php)
+
 ## Byggd med hjälp av
 
 * [XAMPP Control Panel](https://www.apachefriends.org/index.html/) - användargränssnitt för utveckling av PHP-projekt
