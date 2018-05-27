@@ -9,7 +9,6 @@ require($root . '/resources/templates/above.php');
 //efter detta kommer innehållet i dokumentet (main).
 ?>
 
-<?php include($_SERVER['DOCUMENT_ROOT'] . '/resources/scripts/db.php');?>
 <?php include($_SERVER['DOCUMENT_ROOT'] . '/resources/scripts/fetch_users.php');?>
         
 <?php

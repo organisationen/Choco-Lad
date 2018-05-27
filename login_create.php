@@ -1,37 +1,11 @@
 
 <?php
-    include($_SERVER['DOCUMENT_ROOT'] . '/resources/scripts/db.php');
-    
-$_SESSION['NavId'] = 6;
-
-    if(isset($_POST['submit'])) {
-    
-        $username = mysqli_real_escape_string($connection, $_POST['username']);
-        $email = mysqli_real_escape_string($connection, $_POST['email']);
-        $hashed_password = mysqli_real_escape_string($connection, hash('sha512', $_POST['password']));
-        $birthdate = mysqli_real_escape_string($connection, $_POST['birthdate']);
-        $street = mysqli_real_escape_string($connection, $_POST['street']);
-        $street_nr = mysqli_real_escape_string($connection, $_POST['street_nr']);
-        $zip_code = mysqli_real_escape_string($connection, $_POST['zip_code']);
-        $city = mysqli_real_escape_string($connection, $_POST['city']);
-        $first_name = mysqli_real_escape_string($connection, $_POST['first_name']);
-        $last_name = mysqli_real_escape_string($connection, $_POST['last_name']);
-        
-        $query = "INSERT INTO users(username,email,password,birthdate,street,street_nr,zip_code,city,first_name,last_name)";
-        $query .= "VALUES ('$username', '$email', '$hashed_password', '$birthdate', '$street', '$street_nr',' '$zip_code', '$city', '$first_name', '$last_name')";
-        
-        $result = mysqli_query($connection, $query);
-    
-        if(!$result) {
-            die('Något gick fel' . mysqli_error());
-        } else {
-            $_SESSION['LoggedIn'] = true;
-        }
-        }
-?>
-
-<?php
         require($_SERVER['DOCUMENT_ROOT'] . '/resources/config.php');
+        include($root . '/resources/scripts/db.php');
+
+        $_SESSION['NavId'] = 6;
+
+        include($root .'/resources/scripts/login_create-script.php');
 
         $title = 'Registrera dig';
 
@@ -45,51 +19,51 @@ $_SESSION['NavId'] = 6;
         
             <div class="form-group">
                 <label for="username">Användarnamn</label>
-                <input type="text" name="username" class="form-control">
+                <input type="text" value="Kvadevack95" name="username" class="form-control">
             </div> 
             <div class="form-group">
                 <label for="first_name">Förnamn</label>
-                <input type="text" name="first_name" class="form-control">
+                <input type="text" value="Kalle" name="first_name" class="form-control">
             </div> 
             <div class="form-group">
                 <label for="last_name">Efternamn</label>
-                <input type="text" name="last_name" class="form-control">
+                <input type="text" value="Anka" name="last_name" class="form-control">
             </div> 
 
             <div class="form-group">
                 <label for="email">E-mail</label>
-                <input type="email" name="email" class="form-control">
+                <input type="email" value="kalle@margarinfabriken.ab" name="email" class="form-control">
             </div>
         
             <div class="form-group">
                 <label for="birthdate">Födelsedatum</label>
-                <input type="date" name="birthdate" class="form-control">
+                <input type="date" value="1940-05-13" name="birthdate" class="form-control">
             </div>
             <br/>
         
-            <div class="form-inline  text-center">
+            <div class="form-inline  row">
                 <label for="street">Gatuadress:</label>
-                <input type="text" name="street" class="form-control">
+                <input type="text" value="Paradisäppelvägen" name="street" class="form-control">
                 
                 <label for="street_nr">Gatunummer:</label>
-                <input type="text" name="street_nr" class="form-control">
+                <input type="text" value="13" name="street_nr" class="form-control">
                 
                 <label for="zip_code">Postkod:</label>
-                <input type="text" name="zip_code" class="form-control">
+                <input type="text" value="12313" name="zip_code" class="form-control">
 
                 <label for="city">Postort:</label>
-                <input type="text" name="city" class="form-control">
+                <input type="text" value="Ankeborg" name="city" class="form-control">
             </div>
             <br/>
 
             <div class="form-group">
                 <label for="password">Lösenord</label>
-                <input type="password" name="password" class="form-control">
+                <input type="password" value="kajsa" name="password" class="form-control">
             </div>
 
             <div class="form-group">
                 <label for="password">Återbekräfta Lösenord</label>
-                <input type="password" name="password_confirm" class="form-control">
+                <input type="password" value="kajsa" name="password_confirm" class="form-control">
             </div>
 
             <input class="btn btn-primary" type="submit" name="submit" value="Skapa konto">

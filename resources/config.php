@@ -23,4 +23,6 @@ $root = $_SERVER['DOCUMENT_ROOT'];
 $HostAddress = 'http://localhost';
 //Din publika adress till servern eg. 'https://google.com'
 
+require($root .'/resources/scripts/db.php')
+
 ?>
