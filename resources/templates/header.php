@@ -27,7 +27,7 @@
             
             </a></li>
 
-        <li <?php if($_SESSION['NavId'] == 7){echo 'class="active"';}?>><a href="<?= $HostAddress .'/shopping_cart.php'?>"><span class="glyphicon glyphicon-shopping-cart"></span> Cart</a></li>
+        <li <?php if($_SESSION['NavId'] == 7){echo 'class="active"';}?>><a href="<?= $HostAddress .'/shopping_cart.php'?>"><span class="glyphicon glyphicon-shopping-cart"></span> Kundvagn</a></li>
       </ul>
     </div>
   </div>

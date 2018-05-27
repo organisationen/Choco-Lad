@@ -35,7 +35,7 @@ if(isset($_GET['submit'])) {
             <label class="text-primary" for="prod_img"><abbr title="Exempel: jacka.png">Bildfil</abbr></label>
             <input type="text" name="prod_img" class="form-control">
             <label class="text-primary" for="prod_cost">Produktens pris</label>
-            <input type="text" name="prod_cost" class="form-control">
+            <input type="number" name="prod_cost" class="form-control">
             <br/>
             <input class="btn btn-danger" type="submit" name="submit" value='Mata in i "products"'>
         </form>

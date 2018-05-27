@@ -11,13 +11,16 @@
                     
                 $query = "SELECT * FROM users WHERE Username = '$username' AND Password = '$hashed_password'";
                 $result = mysqli_query($connection, $query);
-                    
-                if(mysqli_num_fields($result) > 0) {
+                
+                $row = mysqli_fetch_array($result);
+                
+                
+                if($row) {
                         $_SESSION['loggedIn'] = true;
-                        $username = $_SESSION['username'];
+                        $username = $row['username'];
                         echo $username;
                 } else {
-                    echo "Fack Juu!";    
+                    $error = '<p class="bg-danger text-danger">kunde ej logga in</p>';    
                     //Kunde inte hitta en användare i databasen med den kombinationen av användarnamn och lösenord        
                 }                
             } else {

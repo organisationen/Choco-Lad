@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Värd: 127.0.0.1
--- Tid vid skapande: 27 maj 2018 kl 02:38
+-- Tid vid skapande: 27 maj 2018 kl 04:41
 -- Serverversion: 10.1.31-MariaDB
 -- PHP-version: 7.2.4
 
@@ -34,7 +34,7 @@ CREATE TABLE `products` (
   `prod_desc` varchar(256) NOT NULL,
   `prod_date-added` timestamp(6) NOT NULL DEFAULT CURRENT_TIMESTAMP(6) ON UPDATE CURRENT_TIMESTAMP(6),
   `prod_img` varchar(32) DEFAULT NULL,
-  `prod_cost` float DEFAULT NULL
+  `prod_cost` int(11) DEFAULT NULL COMMENT 'Jag lägger in ett till field om jag vill ha med ören.'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -42,9 +42,10 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`prod_id`, `prod_name`, `prod_desc`, `prod_date-added`, `prod_img`, `prod_cost`) VALUES
-(67, 'Kokosboll', 'En smaskig kokosboll.', '2018-05-25 22:57:16.291403', 'kokosboll.jpg', 4.5),
-(68, 'Kokosboll', 'En smaskig kokosboll.', '2018-05-25 23:05:03.123480', 'kokosboll.png', 0),
-(72, 'Kitkat-sallad', 'Det nyttiga alternativet!', '2018-05-26 21:08:42.136155', 'kitkat_salad.png', 49.9);
+(67, 'Kokosboll', 'En smaskig kokosboll.', '2018-05-27 02:40:28.378643', 'kokosboll.jpg', 5),
+(68, 'Kokosboll', 'En smaskig kokosboll.', '2018-05-27 02:40:28.383644', 'kokosboll.png', 6),
+(72, 'Kitkat-sallad', 'Det nyttiga alternativet!', '2018-05-27 02:40:28.385645', 'kitkat_salad.png', 74),
+(73, 'Benedict Cumberbatch', 'En fullskalig staty av benedict cumberbatch!', '2018-05-27 02:39:01.119683', 'benedict.jpg', 6999);
 
 --
 -- Index för dumpade tabeller
@@ -66,7 +67,7 @@ ALTER TABLE `products`
 -- AUTO_INCREMENT för tabell `products`
 --
 ALTER TABLE `products`
-  MODIFY `prod_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=73;
+  MODIFY `prod_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=74;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

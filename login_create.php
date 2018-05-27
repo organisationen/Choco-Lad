@@ -22,27 +22,26 @@ $_SESSION['NavId'] = 6;
         
         $result = mysqli_query($connection, $query);
     
-    if(!$result) {
-        die('Något gick fel' . mysqli_error());
-    } else {
-        header("location: login.php");
-        $_SESSION['LoggedIn'] = true;
-    }
-    }
+        if(!$result) {
+            die('Något gick fel' . mysqli_error());
+        } else {
+            $_SESSION['LoggedIn'] = true;
+        }
+        }
 ?>
 
 <?php
-require($_SERVER['DOCUMENT_ROOT'] . '/resources/config.php');
+        require($_SERVER['DOCUMENT_ROOT'] . '/resources/config.php');
 
-$title = 'Registrera dig';
+        $title = 'Registrera dig';
 
-require($root . '/resources/templates/above.php');
-//efter detta kommer innehållet i dokumentet (main).
+        require($root . '/resources/templates/above.php');
+        //efter detta kommer innehållet i dokumentet (main).
 ?>
 
 <div class="container">
 
-	<form action="login_create.php" method="post">
+	<form class="" action="login_create.php" method="post">
         
             <div class="form-group">
                 <label for="username">Användarnamn</label>
@@ -68,7 +67,7 @@ require($root . '/resources/templates/above.php');
             </div>
             <br/>
         
-            <div class="form-inline text-center">
+            <div class="form-inline  text-center">
                 <label for="street">Gatuadress:</label>
                 <input type="text" name="street" class="form-control">
                 
