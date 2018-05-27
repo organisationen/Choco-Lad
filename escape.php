@@ -1,4 +1,5 @@
 <?php
-    $_post['escape_url'] = $escape;
-    header("location:" .$escape);
+    if (isset($_GET['escape_url'])) {
+      header("location:" .$_GET['escape_url']);  
+    }
 ?>
