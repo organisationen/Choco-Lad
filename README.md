@@ -1,6 +1,6 @@
 # Choco LAD
 
-[Github Repo](https://github.com/organisationen/Choco-Lad/) - Kom och hjälp mig!
+##[Github Repo](https://github.com/organisationen/Choco-Lad/) - Kom och hjälp mig!
 
 Detta är en skoluppgift!
 
