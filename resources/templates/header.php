@@ -17,7 +17,7 @@
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li <?php if($_SESSION['NavId'] == 6){echo 'class="active"';}?>><a href="<?= $HostAddress .'/login.php';?>"><span class="glyphicon glyphicon-user"></span> 
-			<?php if (!isset($_COOKIE['username'])) {
+			<?php if (!isset($_COOKIE['username'])) { //Säg inget!
                 echo 'logga in';
 				}
 				else {
