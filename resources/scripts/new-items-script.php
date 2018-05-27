@@ -1,12 +1,12 @@
 <?php
 include($_SERVER['DOCUMENT_ROOT'] . '/resources/scripts/db.php');
 
-    $weekback = date('Y-m-d', time() + (60 * 60 * 24 * -7) );
+    /*$1WeekAgo = date('Y-m-d', time() + (60 * 60 * 24 * -7) );*/
 
-mysqli_query($connection,"SET NAMES utf8");
-
-$query = "SELECT * FROM products ORDER BY prod_date ASC";
+$query = "SELECT * FROM products ORDER BY id DESC LIMIT 7";
 $result = mysqli_query($connection, $query);
+
+
 
 while($row = mysqli_fetch_array($result)){
 ?>

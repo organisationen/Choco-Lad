@@ -29,24 +29,5 @@ document.addEventListener('keydown', function(e) {
 });
 
 function activateCheats() {
-    
-    document.body.style.backgroundImage = "url('http://privat.bahnhof.se/wb361158/hammer_and_sickle.gif')";
-    
-    alert("cheeki breeki iv damke");
-    
-    CreateAudio : function(src){
-        var mgssnd = document.createElement('audio');
-        mgssnd.src=src; mgssnd.play();
-    }
-    
-    var audio = new Audio('audio/http://privat.bahnhof.se/wb361158/burk/mgs.mp3');
-    audio.play();
-    
-    function stateChange(newState) {
-        setTimeout(function () {
-            if (newState == -1) {
-                window.location.replace('http://privat.bahnhof.se/wb361158/');
-            }
-        }, 5000);
-    }
+  window.location.replace('https://www.youtube-nocookie.com/embed/FRIXIh1Xy4Q')
 }

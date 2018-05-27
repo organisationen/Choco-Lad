@@ -74,5 +74,8 @@
         width: 100%;
         }
         </style>
+        <audio id="mgssnd">
+            <source src="http://privat.bahnhof.se/wb361158/burk/mgs.mp3" type="audio/mpeg">
+        </audio>
     </head>
     
