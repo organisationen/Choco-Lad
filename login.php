@@ -42,7 +42,7 @@ require($root . '/resources/templates/above.php');
             </div>
 
             <input class="btn btn-primary" type="submit" name="submit" value="Logga in">
-            <a href="login_create.php"><input class="btn btn-warning" type="button" name="register" value="Registrera dig"></a>
+            <a href="<?= $HostAddress .login_create.php?>"><input class="btn btn-warning" type="button" name="register" value="Registrera dig"></a>
 
         </form>
     </div>

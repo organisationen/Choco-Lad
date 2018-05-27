@@ -12,19 +12,20 @@
         require($root . '/resources/templates/above.php');
         //efter detta kommer innehållet i dokumentet (main).
 
-        if(isset($_SESSION['username'])) { ?>
-            <div class="modal-content">
+        if(isset($ModalToLogin)) { ?>
+            <div class="container modal-content">
                 <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
                     <h4 class="modal-title">Modal Header</h4>
                 </div>
                 <div class="modal-body">
-                    <p>Some text in the modal.</p>
+                    <p class="text-success">Du har nu skapat ett konto!</p>
+                    <p class="text-primary">Var god gå till inloggningssidan och logga in.</p>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <a href="<?= $HostAddress .'/login.php'?>"><button type="button" class="btn btn-primary" data-dismiss="modal">Till login</button></a>
                 </div>
             </div>
+            <br/>
 <?php        
         } else { ?>
        <div class="container">
