@@ -11,7 +11,7 @@ require($root . '/resources/templates/above.php');
 //efter detta kommer innehållet i dokumentet (main).
 ?>
 
-<pre class="container-fluid text-center bg-primary">
+<pre class="container-fluid text-center bg-primary" style="border-radius: 10px; box-shadow: 0px 20px 40px rgba(0,0,0,0.4);">
     <h1>Verktyg & sånt</h1>
     <small class="lead">Testat att slå Konamikoden? :)</small>
 </pre>

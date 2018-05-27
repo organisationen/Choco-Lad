@@ -18,6 +18,9 @@ require($root . '/resources/templates/above.php');
                 <h1>Chokladmakare</h1>
             </div>       
         </div>
+        <div class="container panel">
+            <h1>hallå</h1>
+        </div>
 <?php
 require($root . '/resources/templates/below.php');
 //made by Jonatan Nogrell, I guess

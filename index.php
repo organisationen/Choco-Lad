@@ -19,7 +19,7 @@ require($root . '/resources/templates/above.php');
         </div>
 
         <div class="container jumbotron">
-            <h2>Nyanlända varor:</h2>
+            <h2 style="font-weight: bold;">Nyanlända varor:</h2>
 <?php
 include($_SERVER['DOCUMENT_ROOT'] . '/resources/scripts/new-items-script.php');
 ?>

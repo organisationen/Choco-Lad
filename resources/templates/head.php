@@ -38,6 +38,7 @@
         background-repeat: repeat;
         font-family: 'Merriweather', serif;
         }
+            
         /*Byt färg på förgrunden*/
         #main {
         background-color: darkgray;
@@ -48,10 +49,12 @@
         padding-top: 25px;
         box-shadow: 0px 20px 40px rgba(0,0,0,0.4);
         }
+            
         .flex-row {
         display: flex;
         flex-wrap: wrap;
         }
+            
         .flex-row > [class*='col-'] {
         display: flex;
         flex-direction: column;
@@ -68,9 +71,11 @@
         height: auto;
         position: relative;
         }
+            
         .flex-text {
         flex-grow: 1;
         }
+            
         .flex-row img {
         min-width: 0;
         width: 100%;
