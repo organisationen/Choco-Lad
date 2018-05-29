@@ -32,7 +32,7 @@ Du kan importera databasen från '/resources/database/
 
 ### Extra info
 
-- Jag hafäktades en del med att få $_SESSION['LoggedIn']' att finka så jag har den som en cookie istället. Jättedumt, jag vet, men glöm inte att använda inkognitoläge också om du vill se båda versionerna av vissa sidor!! (Ex. /login.php)
+- Jag fäktades en del med att få $_SESSION['LoggedIn']' att finka så jag har den som en cookie istället. Jättedumt, jag vet, men glöm inte att använda inkognitoläge också om du vill se båda versionerna av vissa sidor!! (Ex. /login.php)
 
 ## Byggd med hjälp av
 
@@ -42,5 +42,6 @@ Du kan importera databasen från '/resources/database/
 
 ## Slutsats
 
+* Jag ville undvika att kopiera dig, så det blev lite klurigt. Hoppas Du har överseende. 
 * Hoppas jag inte får helt underkänt! :)
 
